@@ -1,0 +1,15 @@
+package p10;
+
+public class Circulo extends Poligono {
+	private double A=2, r;
+	
+	Circulo(double r){
+		this.r=r;
+	}
+	
+	@Override
+	public double calcularArea() {
+		A=Math.pow(r, 2)*Math.PI;
+		return A;
+	}
+}
