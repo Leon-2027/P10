@@ -1,0 +1,19 @@
+package p10;
+
+public class CTO extends Empleado{
+	private double bono, salariof, salario, exp, contribuciones;
+	
+	CTO(double salario, double exp, double contribuciones){
+		this.salario=salario;
+		this.exp=exp;
+		this.contribuciones=contribuciones;
+	}
+	
+	@Override
+	public double calcularSalario() {
+		contribuciones=contribuciones*500;
+		bono=200*exp;
+		salariof=salario+bono+contribuciones;
+		return salariof;
+	}
+}
