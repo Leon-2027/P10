@@ -1,0 +1,5 @@
+package p10;
+
+abstract class Poligono {
+	abstract double calcularArea();
+}
