@@ -1,0 +1,90 @@
+package p10;
+
+import java.util.Scanner;
+
+public class MainEj2 {
+
+	public static void main(String[] args) {
+		Scanner read = new Scanner(System.in);
+		Empleado com;
+		double salario, exp, subordinados, contribuciones;
+		int op;
+		
+		System.out.println("¿De qué empleado quere obtener su sueldo?");
+		System.out.println("1) CTO");
+		System.out.println("2) Gerente");
+		System.out.println("3) Ingeniero");
+		System.out.println("4) Salir");
+		op=read.nextInt();
+		do {
+			switch(op)
+			{
+			case 1: 
+				do {
+					System.out.println("Ingrese el salario estandar del empleado");
+					salario=read.nextDouble();
+					if(salario<0) System.out.println("No se puede tener un salario negativo");
+				}while(salario<0);
+				do {
+					System.out.println("Ingrese cuántos años de experiencia tiene en la empresa");
+					exp=read.nextDouble();
+					if(exp<0) System.out.println("No se puede tener experiencia negativa");
+				}while(exp<0);
+				do{
+					System.out.println("Ingrese cuántas contribuciones ha hecho a la empresa");
+					contribuciones=read.nextDouble();
+					if(contribuciones<0) System.out.println("No se puede tener contribuciones negativas");
+				}while(contribuciones<0);
+				com = new CTO(salario, exp, contribuciones);
+				System.out.println("El salario es de " + com.calcularSalario());
+				System.out.println("¿Quiere calcular otro salario?");
+				op=read.nextInt();
+				break;
+			case 2: 
+				do{
+					System.out.println("Ingrese el salario estandar del empleado");
+					salario=read.nextDouble();
+					if(salario<0) System.out.println("No se puede tenr un salario negativo");
+				}while(salario<0);
+				do {
+					System.out.println("Ingrese cuántos años de experiencia tiene en la empresa");
+					exp=read.nextDouble();
+					if(exp<0) System.out.println("No se puede tener experiencia negativa");
+				}while(exp<0);
+				do{
+					System.out.println("Ingrese cuántos subordinados tiene");
+					subordinados=read.nextDouble();
+					if(subordinados<0) System.out.println("No se puede tener subordinados negativos");
+				}while(subordinados<0);
+				com = new Gerente(salario, exp, subordinados);
+				System.out.println("El salario es de " + com.calcularSalario());
+				System.out.println("¿Quiere calcular otro salario?");
+				op=read.nextInt();
+				break;
+			case 3:
+				do{
+					System.out.println("Ingrese el salario estandar del empleado");
+					salario=read.nextDouble();
+					if(salario<0) System.out.println("No se puede tener un salario negativo");
+				}while(salario<0);
+				do{
+					System.out.println("Ingrese cuántos años de experiencia tiene en la empresa");
+					exp=read.nextDouble();
+					if(exp<0) System.out.println("No se puede tener experiencia negativa");
+				}while(exp<0);		
+				com = new Ingeniero(salario, exp);
+				System.out.println("El salario es de " + com.calcularSalario());
+				System.out.println("¿Quiere calcular otro salario?");
+				op=read.nextInt();
+				break;
+			case 4:
+				break;
+			default:
+				System.out.println("Opción inválida, ingrese otra");
+			}
+		}while(op!=4);
+		System.out.println("Saliendo del sistema");
+		read.close();
+	}
+
+}
