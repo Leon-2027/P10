@@ -1,0 +1,19 @@
+package p10;
+
+public class Gerente extends Empleado{
+	private double bono, salariof, salario, exp, subordinados;
+	
+	Gerente(double salario, double exp, double subordinados){
+		this.salario=salario;
+		this.exp=exp;
+		this.subordinados=subordinados;
+	}
+	
+	@Override
+	public double calcularSalario() {
+		subordinados=50*subordinados;
+		bono=100*exp;
+		salariof=salario+bono+subordinados;
+		return salariof;
+	}
+}
