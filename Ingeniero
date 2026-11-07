@@ -1,0 +1,17 @@
+package p10;
+
+public class Ingeniero extends Empleado{
+	private double salariof, salario, bono, exp;
+	
+	Ingeniero(double salario, double exp){
+		this.salario=salario;
+		this.exp=exp;
+	}
+	
+	@Override
+	public double calcularSalario() {
+		bono=50*exp;
+		salariof=salario+bono;
+		return salariof;
+	}
+}
