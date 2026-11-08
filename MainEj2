@@ -81,6 +81,7 @@ public class MainEj2 {
 				break;
 			default:
 				System.out.println("Opción inválida, ingrese otra");
+				op=read.nextInt();
 			}
 		}while(op!=4);
 		System.out.println("Saliendo del sistema");
