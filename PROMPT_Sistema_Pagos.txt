@@ -1,0 +1,26 @@
+RETO: SISTEMA DE PAGOS CON TARJETAS
+
+CONTEXTO:
+Se utiliza Java 21 en la ide intellijeid, sin paquetes adicionales. Es una tarea de MPOO, Facultad de Ingenieria UNAM. Todo se ejecuta en consola, sin package.
+
+OBJETIVO:
+Crear un sistema de pagos donde TarjetaDeDebito (10% de comision de lunes a viernes, 0% fines de semana y dias festivos) y TarjetaDeCredito (15% de comision todo el año) implementen el mismo metodo procesarPago(), procesandose desde una coleccion comun.
+Hay una clase base Tarjeta, las dos clases de tarjeta que la extienden y un Main que guarda varias tarjetas en una misma coleccion y las procesa.
+
+RESTRICCIONES
+Las dos tarjetas tienen el mismo metodo procesarPago(), sobrescrito con @Override.
+Las tarjetas se guardan en una misma coleccion (ArrayList) y se procesan con un solo for-each, sin ningun if que distinga el tipo de tarjeta.
+Cada tarjeta calcula su propia comision; el Main no calcula comisiones.
+El dia y si es festivo se manejan de forma sencilla, sin clases de fecha.
+Nombres de clases, atributos y metodos en español.
+Quiero que todas las explicaciones, correcciones, ejemplos y soluciones de programacion se mantengan unicamente dentro de los temas que hemos visto hasta ahora en el curso: clases y objetos, constructores, String, if-else, for-each, ArrayList, herencia (extends, super, @Override) y polimorfismo.
+No utilices temas posteriores que todavia no hemos estudiado (clases abstractas, genericos propios, streams, lambdas, records, packages, excepciones personalizadas).
+
+CRITERIOS DE EXITO
+Debe compilar sin errores ni advertencias.
+Cada tarjeta debe cobrar la comision que le corresponde segun la regla de su tipo.
+
+FORMATO DE RESPUESTA
+Se necesitan 4 archivos .java: Tarjeta.java, TarjetaDeDebito.java, TarjetaDeCredito.java y Main.java
+Codigo sin comentarios ni javadoc
+Al final una explicacion corta de donde se usa el polimorfismo.
